@@ -1,0 +1,42 @@
+<!-- End Page Loading -->
+<div id="validate-page" class="row">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="validade-form middle-box">
+    <div class="row">
+      <div class="input-field col s12 center">
+        <img src="../../assets/images/logo.png" width="150px" height="100px" alt="" class="profile-image-validade">
+      </div>
+    </div>
+    <div class="row margin">
+      <div class="col s12">
+        <mz-input-container>
+          <input mz-input name="code" [(ngModel)]="model.dynamicCode" placeholder="Coupon code" [label]="'Coupon code'" id="code" type="text" required>
+        </mz-input-container>
+      </div>
+    </div>
+    <div class="row margin" *ngIf="showStoresSelect">
+      <div class="col s12">
+        <mz-select-container>
+          <select mz-select id="options-select" [label]="'Store'" name="store" [placeholder]="'Select store'" [(ngModel)]="selectedStore" (change)="loadSalesPoint()">
+            <option *ngFor="let item of stores$ | async" [ngValue]="item.id">{{item.name}}</option>
+          </select>
+        </mz-select-container>
+       
+      </div>
+    </div>
+    <div class="row margin" *ngIf="selectedStore">
+      <div class="col s12">
+          <mz-select-container>
+              <select mz-select id="options-select" [label]="'Point'" name="salesPoint" [placeholder]="'Select salespoint'" [(ngModel)]="model.salesPointId">
+                <option *ngFor="let item of salesPoints$ | async" [ngValue]="item.id">{{item.name}}</option>
+              </select>
+            </mz-select-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class=""></i>
+        <button type="submit" class="btn waves-effect waves-light col s12">Validate code</button>
+      </div>
+    </div>
+  </form>
+</div>

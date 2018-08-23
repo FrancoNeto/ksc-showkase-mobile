@@ -1,0 +1,35 @@
+<!-- End Page Loading -->
+<div id="login-page" class="row">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="login-form">
+    <div class="row">
+      <div class="input-field col s12 center">
+        <img src="../../assets/images/logo.png" width="150px" height="100px" alt="" class="profile-image-login">
+      </div>
+    </div>
+    <div class="row margin">
+      <div class="col s12">
+        <mz-input-container>
+          <i mz-icon-mdi mz-input-prefix class="mdi mdi-account">
+          </i>
+          <input mz-input name="usernameOrEmail" [(ngModel)]="credential.usernameOrEmail" placeholder="username" [label]="'Username'"
+            id="username" type="text">
+        </mz-input-container>
+      </div>
+    </div>
+    <div class="row margin">
+      <div class="col s12">
+        <mz-input-container>
+          <i mz-icon-mdi mz-input-prefix class="mdi mdi-lock-outline">
+          </i>
+          <input mz-input name="password" [(ngModel)]="credential.password" placeholder="password" [label]="'Password'" id="password"
+            type="password">
+        </mz-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+          <button type="submit" class="btn waves-effect waves-light col s12 login-buton">Login</button>
+      </div>
+    </div>
+  </form>
+</div>

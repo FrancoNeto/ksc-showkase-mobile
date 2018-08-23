@@ -1,0 +1,17 @@
+.login-form {
+    padding: 0 30% 0 30%;
+}
+
+.profile-image-login {
+    margin: 10% 0 10% 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .login-form {
+        padding: 0 5% 0 5%;
+    }
+
+    .profile-image-login {
+        margin: 25% 0 15% 0;
+    }
+}
